@@ -18,6 +18,11 @@ def verify_signature(raw, sign):
     return sign_msg == sign
 
 
+@app.route('/')
+def home():
+    return '-'
+
+
 @app.route(f'/{os.environ["ROUTE"]}', methods=['POST'])
 def webhook():
     response = Response()
